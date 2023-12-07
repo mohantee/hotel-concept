@@ -1,6 +1,7 @@
 import express, { Response } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import { hotelRouter } from "./modules/hotel/hotel.route";
 
 const app = express();
 
@@ -12,5 +13,7 @@ app.use(cookieParser());
 app.get("/healthcheck", (_, res: Response) => {
   return res.status(200).json({ message: "OK" });
 });
+
+app.use("/hotel", hotelRouter);
 
 export default app;
