@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS hotel;
+
+USE hotel;
+
+CREATE TABLE IF NOT EXISTS hotels (
+  id VARCHAR(8), 
+  name VARCHAR(100),
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS countries (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(100),
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS cities (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(100),
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT,
+  PRIMARY KEY(id),
+  email VARCHAR(100),
+  username VARCHAR(16),
+  password VARCHAR(100)
+);
+
+INSERT INTO hotels (id, name) VALUES ('EL001', 'Taj');
