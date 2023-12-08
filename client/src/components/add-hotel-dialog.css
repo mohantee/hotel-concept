@@ -1,0 +1,30 @@
+.add-hotel {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-hotel__input {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: hsl(var(--clr-light-500));
+  margin-bottom: 1rem;
+}
+
+.add-hotel__hint {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.add-hotel__icon {
+  font-size: 0.7rem;
+  color: hsl(var(--clr-secondary));
+  cursor: pointer;
+}
+
+.add-hotel__form-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+}

@@ -27,3 +27,7 @@ export const DELETE_HOTEL = `
 export const GET_LATEST_HOTEL_CODE = `
   SELECT id FROM hotel ORDER BY created_at desc limit 1
 `;
+
+export const GET_COUNTRY_CODE = `
+  SELECT country_code FROM city WHERE id = ?;
+`;

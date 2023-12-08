@@ -3,6 +3,7 @@ import pool from "../../config/mysql.config";
 import {
   ADD_HOTEL,
   DELETE_HOTEL,
+  GET_COUNTRY_CODE,
   GET_HOTELS,
   GET_LATEST_HOTEL_CODE,
 } from "./hotel.queries";
