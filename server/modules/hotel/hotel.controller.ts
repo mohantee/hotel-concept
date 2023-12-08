@@ -8,6 +8,9 @@ import {
 } from "./hotel.service";
 import { incrementHotelCode } from "../../helpers/incrementHotelCode";
 
+// TODO: Move business logic from controller to service.
+// Also create an error handler wrapper.
+
 export async function getHotelsHandler({}, res: Response) {
   try {
     const hotels = await getHotels();
