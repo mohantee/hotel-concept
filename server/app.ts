@@ -2,6 +2,7 @@ import express, { Response } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { hotelRouter } from "./modules/hotel/hotel.route";
+import { authRouter } from "./modules/auth/auth.route";
 
 const app = express();
 
@@ -15,5 +16,6 @@ app.get("/healthcheck", (_, res: Response) => {
 });
 
 app.use("/hotel", hotelRouter);
+app.use("/auth", authRouter);
 
 export default app;
