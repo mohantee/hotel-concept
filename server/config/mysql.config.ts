@@ -17,7 +17,9 @@ const connection = mysql.createPool(CONFIG);
 const seedFilePath = path.join(__dirname, "init.sql");
 const seedQuery = fs.readFileSync(seedFilePath, { encoding: "utf-8" });
 
-connection.query(seedQuery);
+connection.query(seedQuery, (err) => {
+  if (err) console.log(err);
+});
 
 const pool = connection.promise();
 
