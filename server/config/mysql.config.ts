@@ -9,10 +9,11 @@ const CONFIG = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: 3001,
+  port: process.env.DB_PORT,
   multipleStatements: true,
 };
 
+// @ts-ignore
 const connection = mysql.createPool(CONFIG);
 
 const seedFilePath = path.join(__dirname, "init.sql");
