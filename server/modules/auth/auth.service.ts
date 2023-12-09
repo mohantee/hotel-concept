@@ -11,7 +11,6 @@ interface User extends RowDataPacket {
 
 export async function getUserByUsername(username: string) {
   const users = await pool.query<User[]>(USER_BY_USERNAME, [username]);
-  console.log(users);
   return users[0][0];
 }
 

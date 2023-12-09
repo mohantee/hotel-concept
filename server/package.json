@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node dist/index",
     "dev": "nodemon ./index.ts",
+    "build": "tsc",
     "seed": "ts-node config/mysql.config.ts"
   },
   "keywords": [],
