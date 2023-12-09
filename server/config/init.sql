@@ -78,4 +78,4 @@ INSERT INTO city (name, country_code) VALUES ('Hiroshima', 6);
 INSERT INTO city (name, country_code) VALUES ('Nagoya', 6);
 INSERT INTO city (name, country_code) VALUES ('Sendai', 6);
 
-INSERT INTO hotel (id, name, city_code, country_code) VALUES ('EL001', 'Taj', 3, 3);
+INSERT IGNORE INTO hotel (id, name, city_code, country_code) VALUES ('EL001', 'Taj', 3, 3);

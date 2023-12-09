@@ -15,9 +15,8 @@ const seedFilePath = path.join(__dirname, "init.sql");
 const seedQuery = fs.readFileSync(seedFilePath, { encoding: "utf-8" });
 const seedConnection = mysql.createConnection(SEED_CONFIG);
 
-seedConnection.query(seedQuery, () => {
-  seedConnection.end();
-});
+seedConnection.query(seedQuery);
+seedConnection.end();
 
 const DB_CONFIG = { ...SEED_CONFIG, database: process.env.DB_NAME };
 
