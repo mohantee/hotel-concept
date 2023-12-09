@@ -4,24 +4,26 @@ dotenv.config();
 import fs from "fs";
 import path from "path";
 
-const CONFIG = {
+const SEED_CONFIG = {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
   port: process.env.DB_PORT,
   multipleStatements: true,
 };
 
-// @ts-ignore
-const connection = mysql.createPool(CONFIG);
-
 const seedFilePath = path.join(__dirname, "init.sql");
 const seedQuery = fs.readFileSync(seedFilePath, { encoding: "utf-8" });
+// @ts-ignore
+const seedConnection = mysql.createConnection(SEED_CONFIG);
 
-connection.query(seedQuery, (err) => {
-  if (err) console.log(err);
-});
+seedConnection.query(seedQuery, () => {});
+seedConnection.end();
+
+const DB_CONFIG = { ...SEED_CONFIG, database: process.env.DB_NAME };
+
+// @ts-ignore
+const connection = mysql.createPool(DB_CONFIG);
 
 const pool = connection.promise();
 
