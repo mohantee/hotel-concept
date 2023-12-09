@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 export const axios = Axios.create({
-  baseURL: "http://127.0.0.1:1337",
+  baseURL: import.meta.env.VITE_BASE_URL,
 });
 
 axios.interceptors.response.use(
