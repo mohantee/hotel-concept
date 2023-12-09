@@ -64,8 +64,3 @@
   gap: 1rem;
   align-items: center;
 }
-
-.login__forgot:hover {
-  color: hsl(var(--clr-secondary));
-  cursor: pointer;
-}

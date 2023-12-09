@@ -2,6 +2,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import "./login.css";
 import { useLogin } from "../api/auth/login";
 import { useAuthContext } from "../context/auth";
+import { ForgotPasswordModal } from "../components/forgot-password-modal";
 
 interface Inputs {
   username: string;
@@ -46,7 +47,7 @@ export function Login() {
           {mutation.isError ? "Username or password incorrect" : null}
         </p>
         <div className="login__form-controls">
-          <span className="login__forgot">Forgot Password?</span>
+          <ForgotPasswordModal />
           <button className="login__btn" type="submit">
             Login
           </button>
