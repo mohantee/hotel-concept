@@ -74,7 +74,7 @@ export function AddHotelDialog() {
             <label htmlFor="country_code" className="add-hotel__label">
               Country Code
             </label>
-            <Tooltip title="Please use a country code inside the range of 1-7.">
+            <Tooltip title="Please use a country code inside the range of 1-6.">
               <FaLightbulb className="add-hotel__icon" />
             </Tooltip>
           </div>
@@ -83,8 +83,8 @@ export function AddHotelDialog() {
             type="number"
             className="add-hotel__input"
             min={1}
-            max={7}
-            {...register("country_code", { required: true, min: 1, max: 7 })}
+            max={6}
+            {...register("country_code", { required: true, min: 1, max: 6 })}
           />
           <div className="add-hotel__form-controls">
             <button type="button" className="btn" onClick={() => reset()}>
